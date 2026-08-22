@@ -1,0 +1,591 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+
+/* ==================================================
+   MAIN CONTENT
+================================================== */
+
+.main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 330px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+/* ==================================================
+   CHAT SECTION
+================================================== */
+
+.chat-section {
+  min-width: 0;
+}
+
+.chat-container {
+  width: 100%;
+  padding: 35px 30px 130px;
+}
+
+
+/* ==================================================
+   WELCOME
+================================================== */
+
+.welcome {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.welcome h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.suggestions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.suggestions button {
+  background: white;
+  border: 1px solid #d1d5db;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.suggestions button:hover {
+  background: #f3f4f6;
+}
+
+
+/* ==================================================
+   MESSAGES
+================================================== */
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.message {
+  max-width: 75%;
+  padding: 16px;
+  border-radius: 14px;
+  line-height: 1.6;
+}
+
+.user-message {
+  align-self: flex-end;
+  background: #2563eb;
+  color: white;
+}
+
+.assistant-message {
+  align-self: flex-start;
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+.message-label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  opacity: 0.75;
+}
+
+.message-text {
+  font-size: 15px;
+}
+
+
+/* ==================================================
+   CHAT TASK CARDS
+================================================== */
+
+.task-list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-card {
+  margin-top: 15px;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+}
+
+.task-title {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.task-status {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+
+/* ==================================================
+   SOURCE
+================================================== */
+
+.source {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+
+/* ==================================================
+   TASK PANEL
+================================================== */
+
+.task-panel {
+  background: white;
+  border-left: 1px solid #e5e7eb;
+  padding: 24px 20px;
+  min-height: calc(100vh - 70px);
+}
+
+.task-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.task-panel-header h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.task-panel-header p {
+  margin: 5px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+
+/* ==================================================
+   REFRESH BUTTON
+================================================== */
+
+.refresh-button {
+  border: 1px solid #d1d5db;
+  background: white;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.refresh-button:hover {
+  background: #f3f4f6;
+}
+
+.refresh-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* ==================================================
+   TASK LIST
+================================================== */
+
+.panel-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+/* ==================================================
+   INDIVIDUAL TASK
+================================================== */
+
+.panel-task {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+  transition: 0.2s ease;
+}
+
+.panel-task:hover {
+  border-color: #d1d5db;
+  background: #ffffff;
+}
+
+
+/* ==================================================
+   TASK CHECK ICON
+================================================== */
+
+.task-check {
+  font-size: 20px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+
+/* ==================================================
+   TASK CONTENT
+================================================== */
+
+.panel-task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.panel-task-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+
+/* ==================================================
+   STATUS BADGE
+================================================== */
+
+.status-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status-badge.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+
+/* ==================================================
+   COMPLETED TASK
+================================================== */
+
+.completed-task {
+  opacity: 0.75;
+}
+
+.completed-task .panel-task-title {
+  text-decoration: line-through;
+}
+
+
+/* ==================================================
+   MARK COMPLETE BUTTON
+================================================== */
+
+.complete-button {
+  margin-top: 10px;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.complete-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* ==================================================
+   TASK LOADING
+================================================== */
+
+.task-loading {
+  text-align: center;
+  padding: 30px 10px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* ==================================================
+   EMPTY TASKS
+================================================== */
+
+.empty-tasks {
+  text-align: center;
+  padding: 35px 15px;
+  color: #6b7280;
+}
+
+.empty-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.empty-tasks p {
+  margin: 0 0 5px;
+  font-weight: bold;
+  color: #374151;
+}
+
+.empty-tasks span {
+  font-size: 12px;
+}
+
+
+/* ==================================================
+   INPUT AREA
+================================================== */
+
+.input-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: white;
+  border-top: 1px solid #e5e7eb;
+
+  padding: 15px 20px;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  z-index: 10;
+}
+
+
+/* ==================================================
+   INPUT
+================================================== */
+
+.input-area input {
+  width: 700px;
+  max-width: 65%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+
+  outline: none;
+
+  font-size: 15px;
+}
+
+.input-area input:focus {
+  border-color: #2563eb;
+}
+
+.input-area input:disabled {
+  background: #f3f4f6;
+}
+
+
+/* ==================================================
+   SEND BUTTON
+================================================== */
+
+.input-area button {
+  padding: 14px 24px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background: #1d4ed8;
+}
+
+.input-area button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .task-panel {
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+
+    min-height: auto;
+
+    margin-bottom: 80px;
+  }
+
+  .chat-container {
+    padding: 25px 20px 120px;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .input-area input {
+    max-width: 70%;
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .header {
+    padding: 16px 18px;
+  }
+
+  .header h1 {
+    font-size: 19px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+
+  .status {
+    display: none;
+  }
+
+  .chat-container {
+    padding: 25px 15px 120px;
+  }
+
+  .welcome {
+    margin-top: 50px;
+  }
+
+  .welcome h2 {
+    font-size: 25px;
+  }
+
+  .welcome p {
+    font-size: 14px;
+  }
+
+  .message {
+    max-width: 95%;
+  }
+
+  .task-panel {
+    padding: 20px 15px;
+  }
+
+  .input-area {
+    padding: 10px;
+  }
+
+  .input-area input {
+    max-width: 100%;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .input-area button {
+    padding: 12px 16px;
+  }
+}
