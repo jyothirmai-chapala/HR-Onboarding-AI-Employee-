@@ -1,0 +1,34 @@
+{
+    "tasks": [
+        {
+            "id": "43ebe2fc",
+            "title": "Submit identity proof",
+            "status": "completed"
+        },
+        {
+            "id": "e2a81837",
+            "title": "Prepare resume",
+            "status": "completed"
+        },
+        {
+            "id": "825ae38f",
+            "title": "Complete coding practice",
+            "status": "completed"
+        },
+        {
+            "id": "1cadef1f",
+            "title": "Apply for internship",
+            "status": "completed"
+        },
+        {
+            "id": "9668995f",
+            "title": "to submit identity proof",
+            "status": "pending"
+        },
+        {
+            "id": "1e61fd32",
+            "title": "upload passport copy",
+            "status": "pending"
+        }
+    ]
+}
